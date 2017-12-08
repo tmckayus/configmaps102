@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testapp-loop
+spec:
+  containers:
+  - image: testapp-loop:latest
+    name: testapp-loop
+    imagePullPolicy: IfNotPresent
+    env:
+    - name: configname
+      value: bob
+  restartPolicy: OnFailure
